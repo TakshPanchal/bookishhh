@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/ivBookCover"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_info_black_24dp"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:id="@+id/tvBookTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@+id/ivBookCover"
+        android:text="Title"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvAuthorName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvBookTitle"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@+id/ivBookCover"
+        android:text="Author's Name" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/tvAuthorName"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@+id/ivBookCover"
+        android:text="Description" />
+
+</RelativeLayout>

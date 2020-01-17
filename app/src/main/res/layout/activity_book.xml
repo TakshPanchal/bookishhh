@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ivBookCover"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_info_black_24dp" />
+
+    <TextView
+        android:id="@+id/tvBookTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivBookCover"
+        android:layout_centerHorizontal="true"
+        android:text="Book Name"
+        android:textSize="30sp"
+        android:textStyle="bold"
+
+        />
+
+    <TextView
+        android:id="@+id/tvAuthorName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvBookTitle"
+        android:layout_alignRight="@+id/tvBookTitle"
+        android:text="Authodname" />
+
+    <Button
+        android:id="@+id/bBreadN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAuthorName"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:text=" Add to Reading Now" />
+
+    <Button
+        android:id="@+id/bBtoBeR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bBreadN"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:text="add to Books to be read" />
+
+    <Button
+        android:id="@+id/bBF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bBtoBeR"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:text="add to Finished Books" />
+</RelativeLayout>

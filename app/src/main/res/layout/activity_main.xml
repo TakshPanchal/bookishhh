@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvHello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:text="Hello book Readers!!"
+        android:textColor="#1BAC1B"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/bBList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvHello"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:text="List Of books" />
+
+    <Button
+        android:id="@+id/bBreadN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bBList"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:text="Reading Now" />
+
+    <Button
+        android:id="@+id/bBtoBeR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bBreadN"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:text="Books to be read" />
+
+    <Button
+        android:id="@+id/bBF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bBtoBeR"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:text="Finished Books" />
+
+    <ImageView android:id="@+id/ivAbout"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_info_black_24dp"
+
+        />
+
+
+</RelativeLayout>
