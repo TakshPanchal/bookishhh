@@ -8,14 +8,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "MainActivity";
-    private Button bListOfB,bReadingNow,bBookToBeRead,bFinishedBook;
+    private Button bListOfB, bReadingNow, bBookToBeRead, bFinishedBook;
+    private Intent intent;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) { 
-        
+    protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initVars();
@@ -23,17 +24,38 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void onClickListeners() {
-        bListOfB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d(TAG, "onClick: clicked");
-                Intent intent = new Intent(MainActivity.this,ListOfBooksActivity.class);
-                startActivity(intent);
-            }
-        });
+        bListOfB.setOnClickListener(this);
+        bBookToBeRead.setOnClickListener(this);
+        bReadingNow.setOnClickListener(this);
+        bFinishedBook.setOnClickListener(this);
     }
 
     private void initVars() {
         bListOfB = (Button) findViewById(R.id.bBList);
+        bReadingNow = (Button) findViewById(R.id.bBreadN);
+        bBookToBeRead = (Button) findViewById(R.id.bBtoBeR);
+        bFinishedBook = (Button) findViewById(R.id.bBF);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.bBList:
+                Log.d(TAG, "onClick: clicked");
+                intent = new Intent(MainActivity.this, ListOfBooksActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.bBreadN:
+                intent = new Intent(MainActivity.this, ReadingNowActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.bBF:
+                intent = new Intent(MainActivity.this, ListOfBooksActivity.class);
+                startActivity(intent);
+                break;
+
+        }
+
+
     }
 }
