@@ -11,13 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ReadingNowActivity"
-            android:label="Reading Now"/>
-        <activity android:name=".BookActivity"
-            android:label="Book"/>
+        <activity android:name=".BooksToReadActivity"></activity>
         <activity
-            android:label="List of Books"
-            android:name=".ListOfBooksActivity" />
+            android:name=".ReadingNowActivity"
+            android:label="Reading Now" />
+        <activity
+            android:name=".BookActivity"
+            android:label="Book" />
+        <activity
+            android:name=".ListOfBooksActivity"
+            android:label="List of Books" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

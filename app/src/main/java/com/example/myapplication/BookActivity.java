@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -15,6 +16,7 @@ import com.bumptech.glide.Glide;
 
 public class BookActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageView cover;
+    private static final String TAG = "BookActivity";
     private TextView title, aName, description;
     private utill utill;
     private int id;
@@ -79,23 +81,24 @@ public class BookActivity extends AppCompatActivity implements View.OnClickListe
 
                 }
                 break;
+
             case R.id.bBtoBeR:
-                if (com.example.myapplication.utill.getBooksToBeRead().contains(com.example.myapplication.utill.getBooksToBeRead().get(id))) {
+
+                if (com.example.myapplication.utill.getBooksToBeRead().contains(com.example.myapplication.utill.getListOfBooks().get(id))) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(BookActivity.this);
                     builder.setMessage("You have Already added");
-
                     builder.create().show();
+                    Log.d(TAG, "onClick: Dialog box show");
                 } else {
                     if (utill.addToBeReadi(com.example.myapplication.utill.getListOfBooks().get(id)))
                         Toast.makeText(this, "Book is added to be Read list Successfully", Toast.LENGTH_SHORT).show();
                     else Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
-
                 }
 
 
                 break;
             case R.id.bBF:
-                if (com.example.myapplication.utill.getFinishedBook().contains(com.example.myapplication.utill.getBooksToBeRead().get(id))) {
+                if (com.example.myapplication.utill.getFinishedBook().contains(com.example.myapplication.utill.getListOfBooks().get(id))) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(BookActivity.this);
                     builder.setMessage("You have Already added");
 
@@ -112,6 +115,7 @@ public class BookActivity extends AppCompatActivity implements View.OnClickListe
         }
 
     }
+
 
     private boolean doesContain(Book book) {
         return com.example.myapplication.utill.getReadingNow().contains(book);

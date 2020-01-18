@@ -47,8 +47,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent = new Intent(MainActivity.this, ListOfBooksActivity.class);
                 startActivity(intent);
                 break;
+                //completed
             case R.id.bBreadN:
                 intent = new Intent(MainActivity.this, ReadingNowActivity.class);
+                startActivity(intent);
+                break;
+            //completed
+            case R.id.bBtoBeR :
+                intent = new Intent(MainActivity.this,BooksToReadActivity.class);
                 startActivity(intent);
                 break;
             case R.id.bBF:
