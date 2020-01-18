@@ -2,15 +2,20 @@ package com.example.myapplication;
 
 public class Book {
     private int id;
-    private String name, AuthorName, Description;
+    private String name, AuthorName, Description, url;
     private float rating, prize;
 
 
-    public Book(int id, String name, String authorName, String description, float rating, float prize) {
+    public String getUrl() {
+        return url;
+    }
+
+    public Book(int id, String name, String authorName, String description, String url, float rating, float prize) {
         this.id = id;
         this.name = name;
         AuthorName = authorName;
         Description = description;
+        this.url = url;
         this.rating = rating;
         this.prize = prize;
     }

@@ -16,7 +16,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+//        getSupportActionBar().home
+// TODO: 18/1/20 Add back button to all 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initVars();
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bReadingNow = (Button) findViewById(R.id.bBreadN);
         bBookToBeRead = (Button) findViewById(R.id.bBtoBeR);
         bFinishedBook = (Button) findViewById(R.id.bBF);
+        // TODO: 18/1/20 about button 
     }
 
     @Override

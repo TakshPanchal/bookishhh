@@ -15,29 +15,38 @@ import com.bumptech.glide.Glide;
 
 public class BookActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageView cover;
-    private TextView title, aName;
+    private TextView title, aName, description;
     private utill utill;
     private int id;
-    private Button bListOfB, bReadingNow, bBookToBeRead, bFinishedBook;
+    private Button bReadingNow, bBookToBeRead, bFinishedBook;
 
+    // TODO: 18/1/20 add book 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+//        getSupportActionBar().
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book);
         init();
         settingAllViews();
         bReadingNow.setOnClickListener(this);
+        bFinishedBook.setOnClickListener(this);
+        bBookToBeRead.setOnClickListener(this);
+        // TODO: 18/1/20 make dlt option  
+        // TODO: 18/1/20 debug logical errors like cheching book list 
 
     }
+
 
     private void settingAllViews() {
 
         title.setText(com.example.myapplication.utill.getListOfBooks().get(id).getName());
-        aName.setText(com.example.myapplication.utill.getListOfBooks().get(id).getAuthorName());
+        aName.setText("By " + com.example.myapplication.utill.getListOfBooks().get(id).getAuthorName());
         Glide.with(this).
                 asBitmap().
-                load(com.example.myapplication.utill.getListOfBooks().get(id).getDescription()).
+                load(com.example.myapplication.utill.getListOfBooks().get(id).getUrl()).
                 into(cover);
+        description.setText(com.example.myapplication.utill.getListOfBooks().get(id).getDescription());
+
 
     }
 
@@ -46,6 +55,7 @@ public class BookActivity extends AppCompatActivity implements View.OnClickListe
         id = intent.getIntExtra("id", 0);
         title = (TextView) findViewById(R.id.tvBookTitle);
         aName = (TextView) findViewById(R.id.tvAuthorName);
+        description = (TextView) findViewById(R.id.tvDescription);
         cover = (ImageView) findViewById(R.id.ivBookCover);
         bReadingNow = (Button) findViewById(R.id.bBreadN);
         bBookToBeRead = (Button) findViewById(R.id.bBtoBeR);
