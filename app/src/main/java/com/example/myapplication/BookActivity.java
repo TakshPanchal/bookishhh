@@ -1,16 +1,18 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 
@@ -25,9 +27,11 @@ public class BookActivity extends AppCompatActivity implements View.OnClickListe
     // TODO: 18/1/20 add book 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-//        getSupportActionBar().
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book);
+//        assert getSupportActionBar() != null;   //null check
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         init();
         settingAllViews();
         bReadingNow.setOnClickListener(this);
@@ -38,6 +42,17 @@ public class BookActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+    }
 
     private void settingAllViews() {
 
@@ -75,6 +90,7 @@ public class BookActivity extends AppCompatActivity implements View.OnClickListe
 
                     builder.create().show();
                 } else {
+                    // FIXME: 18/1/20 MIstake ==> check out index if you are using Array
                     if (utill.addReadingNow(com.example.myapplication.utill.getListOfBooks().get(id)))
                         Toast.makeText(this, "Book is added to Reading list Successfully", Toast.LENGTH_SHORT).show();
                     else Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
